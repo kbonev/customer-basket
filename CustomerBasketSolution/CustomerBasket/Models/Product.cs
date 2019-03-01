@@ -10,7 +10,24 @@ namespace CustomerBasket.Models
     {
         public abstract decimal Price { get; }
         public int Quantity { get; set; }
-        
 
+        public Product()
+        {
+        }
+
+        public Product(int quantity)
+        {
+            Quantity = quantity;
+        }
+        
+        public void AddQuantity(int amount)
+        {
+            Quantity += amount;
+        }
+
+        public decimal Total()
+        {
+            return Price * Quantity;
+        }
     }
 }
