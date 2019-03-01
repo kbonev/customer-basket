@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomerBasket.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace CustomerBasket.Models
 
         public Product()
         {
+            Quantity = 1;
         }
 
         public Product(int quantity)

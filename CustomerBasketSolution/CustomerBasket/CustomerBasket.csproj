@@ -40,10 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Bread.cs" />
-    <Compile Include="Models\Butter.cs" />
-    <Compile Include="Models\Milk.cs" />
-    <Compile Include="Models\Product.cs" />
+    <Compile Include="CustomerBasket.cs" />
+    <Compile Include="Interfaces\IDiscount.cs" />
+    <Compile Include="Models\Discount\FreeMilkDiscount.cs" />
+    <Compile Include="Models\Product\Bread.cs" />
+    <Compile Include="Models\Product\Butter.cs" />
+    <Compile Include="Models\Product\Milk.cs" />
+    <Compile Include="Models\Product\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

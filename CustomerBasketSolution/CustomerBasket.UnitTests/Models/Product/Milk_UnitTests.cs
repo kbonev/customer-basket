@@ -20,5 +20,15 @@ namespace CustomerBasket.UnitTests.Models
 
             Assert.AreEqual(expected, sut.Price);
         }
+
+        [Test]
+        public void ShouldReturnDefaultQuantity1()
+        {
+            var sut = new Milk();
+
+            var expected = 1;
+
+            Assert.AreEqual(expected, sut.Quantity);
+        }
     }
 }
