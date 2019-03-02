@@ -22,14 +22,8 @@ namespace CustomerBasket.Models
             Quantity = quantity;
         }
         
-        public void AddQuantity(int amount)
-        {
-            Quantity += amount;
-        }
+        public void AddQuantity(int amount) => Quantity += amount;
 
-        public decimal Total()
-        {
-            return Price * Quantity;
-        }
+        public decimal Total() => Price * Quantity;
     }
 }

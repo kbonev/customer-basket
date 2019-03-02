@@ -9,6 +9,7 @@ namespace CustomerBasket.Models.Discount
 {
     public class PercentageBreadDiscount : IDiscount
     {
+        //debatable if I should provide this flexibility this early, but as I code for myself - I don't like relying on hard-coded values.
         private decimal _percentageDiscount;
         private Product _condition;
 

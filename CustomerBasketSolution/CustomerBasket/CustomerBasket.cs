@@ -18,15 +18,12 @@ namespace CustomerBasket
             _products = products;
             _discounts = discounts;
         }
-
+        
         public void AddProduct(Product product)
         {
             _products.Add(product);
         }
 
-        public decimal Total()
-        {
-            return _products.Sum(x => x.Total()) - _discounts.Sum(x => x.Calculate(_products));
-        }
+        public decimal Total() =>  _products.Sum(x => x.Total()) - _discounts.Sum(x => x.Calculate(_products));
     }
 }
