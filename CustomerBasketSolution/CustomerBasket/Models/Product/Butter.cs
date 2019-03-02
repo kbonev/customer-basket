@@ -8,7 +8,7 @@ namespace CustomerBasket.Models
 {
     public class Butter : Product
     {
-        public override decimal Price => 1.0m;
+        public override decimal Price => 0.8m;
 
         public Butter(): base()
         {

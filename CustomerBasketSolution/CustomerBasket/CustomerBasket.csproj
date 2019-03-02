@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerBasket.cs" />
+    <Compile Include="Interfaces\ICustomerBasket.cs" />
     <Compile Include="Interfaces\IDiscount.cs" />
     <Compile Include="Models\Discount\FreeMilkDiscount.cs" />
     <Compile Include="Models\Discount\PercentageBreadDiscount.cs" />

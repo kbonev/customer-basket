@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerBasket_UnitTests.cs" />
     <Compile Include="Models\Discount\FreeMilkDiscount_UnitTests.cs" />
     <Compile Include="Models\Discount\PercentageBreadDiscount_UnitTests.cs" />
     <Compile Include="Models\Product\Bread_UnitTests.cs" />

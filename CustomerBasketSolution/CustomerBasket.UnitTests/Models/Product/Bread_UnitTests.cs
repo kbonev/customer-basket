@@ -12,11 +12,11 @@ namespace CustomerBasket.UnitTests.Models
     class Bread_UnitTests
     {
         [Test]
-        public void ShouldReturn80pPrice()
+        public void ShouldReturn100pPrice()
         {
             var sut = new Bread();
 
-            var expected = 0.8m;
+            var expected = 1m;
 
             Assert.AreEqual(expected, sut.Price);
         }
@@ -43,11 +43,11 @@ namespace CustomerBasket.UnitTests.Models
         }
 
         [Test]
-        public void ShouldReturnTotalOf4()
+        public void ShouldReturnTotalOf5()
         {
             var sut = new Bread(5);
 
-            var expected = 4m;
+            var expected = 5m;
 
             Assert.AreEqual(expected, sut.Total());
         }
