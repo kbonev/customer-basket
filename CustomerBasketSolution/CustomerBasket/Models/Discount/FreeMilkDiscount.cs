@@ -9,23 +9,23 @@ namespace CustomerBasket.Models.Discount
 {
     public class FreeMilkDiscount : IDiscount
     {
-        private int _quantityNeeded;
+        private Product _condition;
 
-        public FreeMilkDiscount(int quantityNeeded)
+        public FreeMilkDiscount(Product quantityNeeded)
         {
-            _quantityNeeded = quantityNeeded;
+            _condition = quantityNeeded;
         }
 
         public decimal Calculate(List<Product> products)
         {
             //find out how many milks are there in the list
-            var milkQuantity = products.Where(x => x.GetType() == typeof(Milk)).Sum(x => x.Quantity);
+            var milkQuantity = products.Where(x => x.GetType() == _condition.GetType()).Sum(x => x.Quantity);
 
-            if (milkQuantity == 0 || milkQuantity < _quantityNeeded)
+            if (milkQuantity == 0 || milkQuantity < _condition.Quantity)
                 return 0;
 
             //every n-th milk deducts one full price
-            return (milkQuantity / _quantityNeeded) * new Milk().Price;
+            return (milkQuantity / _condition.Quantity) * new Milk().Price;
         }
     }
 }

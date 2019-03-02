@@ -37,7 +37,7 @@ namespace CustomerBasket.UnitTests.Models
             var sut = new Bread();
             sut.AddQuantity(5);
 
-            var expected = 5;
+            var expected = 6;
 
             Assert.AreEqual(expected, sut.Quantity);
         }

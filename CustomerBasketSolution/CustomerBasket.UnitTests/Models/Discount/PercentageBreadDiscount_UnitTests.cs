@@ -10,23 +10,24 @@ using System.Threading.Tasks;
 namespace CustomerBasket.UnitTests.Models.Discount
 {
     [TestFixture]
-    class FreeMilkDiscount_UnitTests
+    class PercentageBreadDiscount_UnitTests
     {
-        FreeMilkDiscount sut;
+        PercentageBreadDiscount sut;
 
         [SetUp]
-        public void SetUp() => sut = new FreeMilkDiscount(new Milk(4));
+        public void SetUp() => sut = new PercentageBreadDiscount(new Butter(2), 50);
 
         [Test]
-        public void ShouldReturnOneMilkDiscount()
+        public void ShouldReturnOneHalfPriceBreadDiscount()
         {
             var products = new List<Product>()
             {
                 new Milk(4),
+                new Butter(2),
                 new Bread()
             };
 
-            var expected = new Milk().Price;
+            var expected = new Bread().Price / 2;
 
             var result = sut.Calculate(products);
 
@@ -34,15 +35,16 @@ namespace CustomerBasket.UnitTests.Models.Discount
         }
 
         [Test]
-        public void ShouldReturnTwoMilkDiscount()
+        public void ShouldReturnTwoHalfPriceBreadDiscount()
         {
             var products = new List<Product>()
             {
-                new Milk(8),
+                new Milk(4),
+                new Butter(4),
                 new Bread()
             };
 
-            var expected = new Milk().Price * 2;
+            var expected = new Bread().Price;
 
             var result = sut.Calculate(products);
 
@@ -50,11 +52,12 @@ namespace CustomerBasket.UnitTests.Models.Discount
         }
 
         [Test]
-        public void ShouldNotReturnMilkDiscount()
+        public void ShouldNotReturnAnyDiscount()
         {
             var products = new List<Product>()
             {
-                new Milk(3),
+                new Milk(4),
+                new Butter(1),
                 new Bread()
             };
 
