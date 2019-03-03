@@ -19,7 +19,7 @@ namespace CustomerBasket
             _discounts = discounts;
         }
         
-        public void AddProduct(Product product)
+        public void AddProduct(IProduct product)
         {
             _products.Add(product);
         }

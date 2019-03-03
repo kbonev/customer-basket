@@ -9,7 +9,7 @@ namespace CustomerBasket.Interfaces
 {
     public interface ICustomerBasket
     {
-        void AddProduct(Product product);
+        void AddProduct(IProduct product);
         decimal Total();
     }
 }

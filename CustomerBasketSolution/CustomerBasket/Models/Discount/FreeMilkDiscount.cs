@@ -10,9 +10,9 @@ namespace CustomerBasket.Models.Discount
     public class FreeMilkDiscount : IDiscount
     {
         //debatable if I should provide this flexibility this early, but as I code for myself - I don't like relying on hard-coded values.
-        private Product _condition;
+        private IProduct _condition;
 
-        public FreeMilkDiscount(Product quantityNeeded)
+        public FreeMilkDiscount(IProduct quantityNeeded)
         {
             _condition = quantityNeeded;
         }
