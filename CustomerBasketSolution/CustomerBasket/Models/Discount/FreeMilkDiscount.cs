@@ -17,7 +17,7 @@ namespace CustomerBasket.Models.Discount
             _condition = quantityNeeded;
         }
 
-        public decimal Calculate(List<Product> products)
+        public decimal Calculate(List<IProduct> products)
         {
             //find out how many milks are there in the list
             var milkQuantity = products.Where(x => x.GetType() == _condition.GetType()).Sum(x => x.Quantity);

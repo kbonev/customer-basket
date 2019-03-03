@@ -19,7 +19,7 @@ namespace CustomerBasket.Models.Discount
             _percentageDiscount = percentageDiscount;
         }
 
-        public decimal Calculate(List<Product> products)
+        public decimal Calculate(List<IProduct> products)
         {
             var productMatching = products.Where(x => x.GetType() == _condition.GetType()).ToList();
             var productMatchingCount = productMatching.Sum(x => x.Quantity);

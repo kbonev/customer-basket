@@ -43,6 +43,7 @@
     <Compile Include="CustomerBasket.cs" />
     <Compile Include="Interfaces\ICustomerBasket.cs" />
     <Compile Include="Interfaces\IDiscount.cs" />
+    <Compile Include="Interfaces\IProduct.cs" />
     <Compile Include="Models\Discount\FreeMilkDiscount.cs" />
     <Compile Include="Models\Discount\PercentageBreadDiscount.cs" />
     <Compile Include="Models\Product\Bread.cs" />

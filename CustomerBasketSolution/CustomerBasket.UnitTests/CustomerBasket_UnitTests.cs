@@ -28,7 +28,7 @@ namespace CustomerBasket.UnitTests
         [Test]
         public void ShouldTotal295p()
         {
-            var prods = new List<Product>()
+            var prods = new List<IProduct>()
             {
                 new Butter(),
                 new Bread(),
@@ -47,7 +47,7 @@ namespace CustomerBasket.UnitTests
         [Test]
         public void ShouldTotal310p()
         {
-            var prods = new List<Product>()
+            var prods = new List<IProduct>()
             {
                 new Butter(2),
                 new Bread(2),
@@ -65,7 +65,7 @@ namespace CustomerBasket.UnitTests
         [Test]
         public void ShouldTotal345p()
         {
-            var prods = new List<Product>()
+            var prods = new List<IProduct>()
             {
                 new Milk(4)
             };
@@ -82,7 +82,7 @@ namespace CustomerBasket.UnitTests
         [Test]
         public void ShouldTotal900p()
         {
-            var prods = new List<Product>()
+            var prods = new List<IProduct>()
             {
                 new Milk(8),
                 new Bread(),

@@ -10,10 +10,10 @@ namespace CustomerBasket
 {
     public class CustomerBasket : ICustomerBasket
     {
-        private List<Product> _products = new List<Product>();
+        private List<IProduct> _products = new List<IProduct>();
         private List<IDiscount> _discounts = new List<IDiscount>();
 
-        public CustomerBasket(List<Product> products, List<IDiscount> discounts)
+        public CustomerBasket(List<IProduct> products, List<IDiscount> discounts)
         {
             _products = products;
             _discounts = discounts;

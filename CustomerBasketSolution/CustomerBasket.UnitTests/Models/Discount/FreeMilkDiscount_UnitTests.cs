@@ -1,4 +1,5 @@
-﻿using CustomerBasket.Models;
+﻿using CustomerBasket.Interfaces;
+using CustomerBasket.Models;
 using CustomerBasket.Models.Discount;
 using NUnit.Framework;
 using System;
@@ -20,7 +21,7 @@ namespace CustomerBasket.UnitTests.Models.Discount
         [Test]
         public void ShouldReturnOneMilkDiscount()
         {
-            var products = new List<Product>()
+            var products = new List<IProduct>()
             {
                 new Milk(4),
                 new Bread()
@@ -36,7 +37,7 @@ namespace CustomerBasket.UnitTests.Models.Discount
         [Test]
         public void ShouldReturnTwoMilkDiscount()
         {
-            var products = new List<Product>()
+            var products = new List<IProduct>()
             {
                 new Milk(8),
                 new Bread()
@@ -52,7 +53,7 @@ namespace CustomerBasket.UnitTests.Models.Discount
         [Test]
         public void ShouldNotReturnMilkDiscount()
         {
-            var products = new List<Product>()
+            var products = new List<IProduct>()
             {
                 new Milk(3),
                 new Bread()

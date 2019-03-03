@@ -7,23 +7,25 @@ using System.Threading.Tasks;
 
 namespace CustomerBasket.Models
 {
-    public abstract class Product
+    public abstract class Product : IProduct
     {
         public abstract decimal Price { get; }
-        public int Quantity { get; set; }
+        public int _quantity { get; set; }
 
         public Product()
         {
-            Quantity = 1;
+            _quantity = 1;
         }
 
         public Product(int quantity)
         {
-            Quantity = quantity;
+            _quantity = quantity;
         }
-        
-        public void AddQuantity(int amount) => Quantity += amount;
 
-        public decimal Total() => Price * Quantity;
+        public int Quantity => _quantity;
+        
+        public void AddQuantity(int amount) => _quantity += amount;
+
+        public decimal Total() => Price * _quantity;
     }
 }

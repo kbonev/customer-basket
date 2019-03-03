@@ -1,5 +1,4 @@
-﻿using CustomerBasket.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace CustomerBasket.Interfaces
 {
-    public interface IDiscount
+    public interface IProduct
     {
-        decimal Calculate(List<IProduct> products);
+        int Quantity { get; }
+        void AddQuantity(int amount);
+
+        decimal Total();
     }
 }
