@@ -16,7 +16,7 @@ namespace CustomerBasket.UnitTests
     {
         List<IDiscount> discounts = new List<IDiscount>();
 
-        [SetUp]
+        [OneTimeSetUp]
         public void SetUp()
         {
             var milk = ProductFactory.Get("milk", 4);

@@ -16,7 +16,7 @@ namespace CustomerBasket.UnitTests.Models.Discount_UT
     {
         PercentagePriceDiscount sut;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void SetUp()
         {
             var product = ProductFactory.Get("butter", 2);
