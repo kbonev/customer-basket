@@ -36,3 +36,8 @@ Given the basket has 2 butter, 1 bread and 8 milk
 When I total the basket 
 Then the total should be £9.00
 ```
+
+
+## Technology
+
+- I have used the latest version of C# and VS2015. For UnitTesting in I have used NUnit.
