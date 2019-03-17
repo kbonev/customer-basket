@@ -1,4 +1,5 @@
-﻿using CustomerBasket.Interfaces;
+﻿using CustomerBasket.Factory;
+using CustomerBasket.Interfaces;
 using CustomerBasket.Models;
 using CustomerBasket.Models.Discount;
 using NUnit.Framework;
@@ -15,87 +16,91 @@ namespace CustomerBasket.UnitTests
     {
         List<IDiscount> discounts = new List<IDiscount>();
 
-        //[SetUp]
-        //public void SetUp()
-        //{
-        //    discounts = new List<IDiscount>()
-        //    {
-        //        new FreeMilkDiscount(new Milk(4)),
-        //        new PercentageBreadDiscount(new Butter(2), 50)
-        //    };
-        //}
+        [SetUp]
+        public void SetUp()
+        {
+            var milk = ProductFactory.Get("milk", 4);
+            var butter = ProductFactory.Get("butter", 2);
+            var bread = ProductFactory.Get("bread", 1);
 
-        //[Test]
-        //public void ShouldTotal295p()
-        //{
-        //    var prods = new List<IProduct>()
-        //    {
-        //        new Butter(),
-        //        new Bread(),
-        //        new Milk()
-        //    };
+            discounts = new List<IDiscount>()
+            {
+                new StaticPriceDiscount(milk, milk.Price),
+                new PercentagePriceDiscount(butter, bread, 50)
+            };
+        }
 
-        //    var sut = new CustomerBasket(prods, discounts);
+        [Test]
+        public void ShouldTotal295p()
+        {
+            var prods = new List<IProduct>()
+            {
+                ProductFactory.Get("milk", 1),
+                ProductFactory.Get("butter", 1),
+                ProductFactory.Get("bread", 1)
+            };
 
-        //    var result = sut.Total();
+            var sut = new CustomerBasket(prods, discounts);
 
-        //    var expected = 2.95m;
+            var result = sut.Total();
 
-        //    Assert.AreEqual(expected, result);
-        //}
+            var expected = 2.95m;
 
-        //[Test]
-        //public void ShouldTotal310p()
-        //{
-        //    var prods = new List<IProduct>()
-        //    {
-        //        new Butter(2),
-        //        new Bread(2),
-        //    };
+            Assert.AreEqual(expected, result);
+        }
 
-        //    var sut = new CustomerBasket(prods, discounts);
+        [Test]
+        public void ShouldTotal310p()
+        {
+            var prods = new List<IProduct>()
+            {
+                ProductFactory.Get("butter", 2),
+                ProductFactory.Get("bread", 2)
+            };
 
-        //    var result = sut.Total();
+            var sut = new CustomerBasket(prods, discounts);
 
-        //    var expected = 3.10m;
+            var result = sut.Total();
 
-        //    Assert.AreEqual(expected, result);
-        //}
+            var expected = 3.10m;
 
-        //[Test]
-        //public void ShouldTotal345p()
-        //{
-        //    var prods = new List<IProduct>()
-        //    {
-        //        new Milk(4)
-        //    };
+            Assert.AreEqual(expected, result);
+        }
 
-        //    var sut = new CustomerBasket(prods, discounts);
+        [Test]
+        public void ShouldTotal345p()
+        {
+            var prods = new List<IProduct>()
+            {
+                ProductFactory.Get("milk", 4)
+            };
 
-        //    var result = sut.Total();
+            var sut = new CustomerBasket(prods, discounts);
 
-        //    var expected = 3.45m;
+            var result = sut.Total();
 
-        //    Assert.AreEqual(expected, result);
-        //}
+            var expected = 3.45m;
 
-        //[Test]
-        //public void ShouldTotal900p()
-        //{
-        //    var prods = new List<IProduct>()
-        //    {
-        //        new Milk(8),
-        //        new Bread(),
-        //        new Butter(2)
-        //    };
+            Assert.AreEqual(expected, result);
+        }
 
-        //    var sut = new CustomerBasket(prods, discounts);
+        [Test]
+        public void ShouldTotal900p()
+        {
+            var prods = new List<IProduct>()
+            {
+                ProductFactory.Get("milk", 8),
+                ProductFactory.Get("butter", 2),
+                ProductFactory.Get("bread", 1)
+            };
 
-        //    var result = sut.Total();
+            var sut = new CustomerBasket(prods, discounts);
 
-        //    var expected = 9m;
+            var result = sut.Total();
 
-        //    Assert.AreEqual(expected, result);
-        //}
+            var expected = 9m;
+
+            Assert.AreEqual(expected, result);
+        }
     }
 }
