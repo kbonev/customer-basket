@@ -2,3 +2,7 @@ D:\Dev\Test\Decision\CustomerBasketSolution\CustomerBasket\bin\Debug\CustomerBas
 D:\Dev\Test\Decision\CustomerBasketSolution\CustomerBasket\bin\Debug\CustomerBasket.pdb
 D:\Dev\Test\Decision\CustomerBasketSolution\CustomerBasket\obj\Debug\CustomerBasket.dll
 D:\Dev\Test\Decision\CustomerBasketSolution\CustomerBasket\obj\Debug\CustomerBasket.pdb
+D:\Dev\Test\Basket\customer-basket-master\customer-basket-master\CustomerBasketSolution\CustomerBasket\bin\Debug\CustomerBasket.dll
+D:\Dev\Test\Basket\customer-basket-master\customer-basket-master\CustomerBasketSolution\CustomerBasket\bin\Debug\CustomerBasket.pdb
+D:\Dev\Test\Basket\customer-basket-master\customer-basket-master\CustomerBasketSolution\CustomerBasket\obj\Debug\CustomerBasket.dll
+D:\Dev\Test\Basket\customer-basket-master\customer-basket-master\CustomerBasketSolution\CustomerBasket\obj\Debug\CustomerBasket.pdb

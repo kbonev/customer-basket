@@ -8,9 +8,11 @@ namespace CustomerBasket.Interfaces
 {
     public interface IProduct
     {
+        string Name { get; }
         int Quantity { get; }
-        void AddQuantity(int amount);
+        decimal Price { get; }
 
+        void AddQuantity(int amount);
         decimal Total();
     }
 }

@@ -41,14 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerBasket.cs" />
+    <Compile Include="Factory\ProductFactory.cs" />
     <Compile Include="Interfaces\ICustomerBasket.cs" />
     <Compile Include="Interfaces\IDiscount.cs" />
     <Compile Include="Interfaces\IProduct.cs" />
-    <Compile Include="Models\Discount\FreeMilkDiscount.cs" />
-    <Compile Include="Models\Discount\PercentageBreadDiscount.cs" />
-    <Compile Include="Models\Product\Bread.cs" />
-    <Compile Include="Models\Product\Butter.cs" />
-    <Compile Include="Models\Product\Milk.cs" />
+    <Compile Include="Models\Discount\PercentagePriceDiscount.cs" />
+    <Compile Include="Models\Discount\StaticPriceDiscount.cs" />
     <Compile Include="Models\Product\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
